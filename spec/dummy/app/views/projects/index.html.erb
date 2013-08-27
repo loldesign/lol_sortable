@@ -1,0 +1,17 @@
+<h2>Project List</h2>
+
+<table>
+  <caption>The follow projects you can sorte just dragging and dropping</caption>
+  <thead>
+    <tr>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody class='is-sortable' data-resource='project'>
+    <% @projects.each do |project| %>
+      <tr data-id='<%= project.id %>'>
+        <td><%= project.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
