@@ -1,0 +1,71 @@
+.F......*.F
+
+Pending:
+  Profile add some examples to (or delete) /Users/eduardodeoliveirazaghi/Projects/loldesign/lol_sortable/spec/dummy/spec/models/profile_spec.rb
+    # No reason given
+    # ./spec/dummy/spec/models/profile_spec.rb:4
+
+Failures:
+
+  1) SortableController#prioritize when success should eq [#<Project _id: 5481fbf5cdab0b8a49000004, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000005, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000006, priority: 30000>]
+     Failure/Error: it{ Project.prioritized.should eq([project02, project03, project01]) }
+       
+       expected: [#<Project _id: 5481fbf5cdab0b8a49000004, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000005, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000006, priority: 30000>]
+            got: #<Mongoid::Criteria
+         selector: {}
+         options:  {:sort=>{"priority"=>1}}
+         class:    Project
+         embedded: false>
+       
+       
+       (compared using ==)
+       
+       Diff:
+       [34m@@ -1,4 +1,6 @@
+       [0m[31m-[#<Project _id: 5481fbf5cdab0b8a49000004, priority: 30000>,
+       [0m[31m- #<Project _id: 5481fbf5cdab0b8a49000005, priority: 30000>,
+       [0m[31m- #<Project _id: 5481fbf5cdab0b8a49000006, priority: 30000>]
+       [0m[32m+#<Mongoid::Criteria
+       [0m[32m+  selector: {}
+       [0m[32m+  options:  {:sort=>{"priority"=>1}}
+       [0m[32m+  class:    Project
+       [0m[32m+  embedded: false>
+       [0m
+     # ./spec/controllers/sortable_controller_spec.rb:15:in `block (4 levels) in <top (required)>'
+
+  2) Mongoid::LolSortable#prioritize should eq [#<Project _id: 5481fbf5cdab0b8a49000012, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000010, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000011, priority: 30000>]
+     Failure/Error: it{ should eq([project03, project01, project02]) }
+       
+       expected: [#<Project _id: 5481fbf5cdab0b8a49000012, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000010, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000011, priority: 30000>]
+            got: #<Mongoid::Criteria
+         selector: {}
+         options:  {:sort=>{"priority"=>1}}
+         class:    Project
+         embedded: false>
+       
+       
+       (compared using ==)
+       
+       Diff:
+       [34m@@ -1,4 +1,6 @@
+       [0m[31m-[#<Project _id: 5481fbf5cdab0b8a49000012, priority: 30000>,
+       [0m[31m- #<Project _id: 5481fbf5cdab0b8a49000010, priority: 30000>,
+       [0m[31m- #<Project _id: 5481fbf5cdab0b8a49000011, priority: 30000>]
+       [0m[32m+#<Mongoid::Criteria
+       [0m[32m+  selector: {}
+       [0m[32m+  options:  {:sort=>{"priority"=>1}}
+       [0m[32m+  class:    Project
+       [0m[32m+  embedded: false>
+       [0m
+     # ./spec/lib/mongoid/lol_sortable_spec.rb:22:in `block (3 levels) in <top (required)>'
+
+Finished in 0.11808 seconds
+11 examples, 2 failures, 1 pending
+
+Failed examples:
+
+rspec ./spec/controllers/sortable_controller_spec.rb:15 # SortableController#prioritize when success should eq [#<Project _id: 5481fbf5cdab0b8a49000004, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000005, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000006, priority: 30000>]
+rspec ./spec/lib/mongoid/lol_sortable_spec.rb:22 # Mongoid::LolSortable#prioritize should eq [#<Project _id: 5481fbf5cdab0b8a49000012, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000010, priority: 30000>, #<Project _id: 5481fbf5cdab0b8a49000011, priority: 30000>]
+
+Randomized with seed 52286
+

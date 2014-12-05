@@ -8,6 +8,8 @@ describe SortableController do
     let(:project02){ Project.create }
     let(:project03){ Project.create }
 
+    before{ Project.destroy_all }
+
     context 'when success' do
       before{ post :prioritize, resource: 'project', ids: [project02.id, project03.id, project01.id], format: 'json' }
 

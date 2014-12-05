@@ -11,13 +11,16 @@ describe Mongoid::LolSortable do
   end
 
   describe '#prioritize' do
-    let!(:project01){ Project.create }
-    let!(:project02){ Project.create }
-    let!(:project03){ Project.create }
+    let(:project01){ Project.create }
+    let(:project02){ Project.create }
+    let(:project03){ Project.create }
 
-    before { Project.prioritize([project03.id, project01.id, project02.id]) }
+    before do 
+      Project.destroy_all
+      Project.prioritize([project03.id, project01.id, project02.id]) 
+    end
 
-    subject{ Project.prioritized }
+    subject{ Project.prioritized.to_a }
     
     it{ should eq([project03, project01, project02]) }
   end

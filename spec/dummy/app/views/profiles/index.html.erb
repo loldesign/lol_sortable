@@ -1,0 +1,17 @@
+<h2>Profiles List</h2>
+
+<table>
+  <caption>The follow projects you can sorte just dragging and dropping</caption>
+  <thead>
+    <tr>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody class='is-sortable' data-resource='profile'>
+    <% @profiles.each do |profile| %>
+      <tr data-id='<%= profile.id %>'>
+        <td><%= profile.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
