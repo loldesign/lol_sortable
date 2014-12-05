@@ -68,4 +68,4 @@ spec/dummy/log/development.log
 
 spec/dummy/log/development.log
 spec/dummy/public/uploads/*
-vendor/cahe
+vendor/cache
