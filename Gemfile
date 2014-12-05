@@ -13,6 +13,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner', '>= 1.0.0.RC1'
+  gem 'database_cleaner', '>= 1.3.0'
   gem 'mongoid-rspec'   , '>= 1.7.0'
 end
